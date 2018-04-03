@@ -16,4 +16,8 @@ node {
 
     stage 'Liberar'
     archiveArtifacts artifacts: 'build/**/*.jar', fingerprint: true
+
+    stage 'Notificar'
+    emailext attachLog: true, body: 'Se adjuntan los resultados del build', subject: 'Resultados del pipeline', to: 'msoto@optimisa.cl'
+
 }
