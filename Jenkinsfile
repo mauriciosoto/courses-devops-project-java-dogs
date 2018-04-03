@@ -5,8 +5,11 @@ node {
     stage 'Compilar'
     sh "./gradlew compileJava"
 
-    stage 'Pruebas'
+    stage 'Pruebas unitarias'
     sh "./gradlew test"
+
+    tage 'Pruebas Integradas'
+    sh "./gradlew integrationTest"
 
     stage 'Build'
     sh "./gradlew build"
